@@ -287,7 +287,7 @@ Backend functionality and additional website sections can be implemented in futu
 GitHub: [@sanadgol83](https://github.com/sanadgol83)
 
 ---
-
+ 
 ## 📄 License
 
 This project does not currently specify a separate open-source license.
