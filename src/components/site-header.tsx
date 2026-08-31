@@ -64,7 +64,7 @@ export function SiteHeader() {
 
       <div
         className={[
-          "fixed inset-y-0 left-0 z-50 w-1/3 min-w-[140px] bg-background shadow-2xl transition-transform duration-300 ease-out md:hidden",
+          "fixed inset-y-0 left-0 z-50 w-1/3 min-w-[140px] bg-black shadow-2xl transition-transform duration-300 ease-out md:hidden",
           open ? "translate-x-0" : "-translate-x-full",
         ].join(" ")}
       >
