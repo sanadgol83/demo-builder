@@ -56,7 +56,7 @@ export function SiteHeader() {
 
       {open && (
         <div
-          className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden"
+          className="fixed inset-0 z-40 bg-black/85 backdrop-blur-md md:hidden"
           onClick={() => setOpen(false)}
           aria-hidden="true"
         />
@@ -64,14 +64,11 @@ export function SiteHeader() {
 
       <div
         className={[
-          "fixed inset-y-0 left-0 z-50 w-72 bg-background shadow-2xl transition-transform duration-300 ease-out md:hidden",
+          "fixed inset-y-0 left-0 z-50 w-1/3 min-w-[140px] bg-background shadow-2xl transition-transform duration-300 ease-out md:hidden",
           open ? "translate-x-0" : "-translate-x-full",
         ].join(" ")}
       >
-        <div className="flex h-16 items-center justify-between border-b border-border px-5">
-          <span className="text-lg font-bold tracking-[0.22em] text-foreground">
-            MOLKE<span className="text-gold">BASTAN</span>
-          </span>
+        <div className="flex h-16 items-center justify-end border-b border-border px-5">
           <button
             className="text-foreground"
             aria-label="بستن منو"
