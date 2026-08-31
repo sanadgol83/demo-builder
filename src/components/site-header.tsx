@@ -56,7 +56,7 @@ export function SiteHeader() {
 
       {open && (
         <div
-          className="fixed inset-0 z-40 bg-black/95 backdrop-blur-2xl md:hidden"
+          className="fixed inset-0 z-40 bg-black md:hidden"
           onClick={() => setOpen(false)}
           aria-hidden="true"
         />
