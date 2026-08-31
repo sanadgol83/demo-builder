@@ -69,7 +69,7 @@ export function SiteHeader() {
       {open &&
         createPortal(
           <div
-            className="fixed left-0 right-auto top-0 bottom-0 z-[9999] h-screen w-[40vw] max-w-[40vw] bg-background md:hidden"
+            className="fixed left-0 right-auto top-0 bottom-0 z-[9999] h-screen w-[40vw] max-w-[40vw] bg-[rgba(10,10,10,0.90)] backdrop-blur-[2px] md:hidden"
             role="dialog"
             aria-modal="true"
             aria-label="منوی اصلی"
