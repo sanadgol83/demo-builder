@@ -68,52 +68,45 @@ export function SiteHeader() {
 
       {open &&
         createPortal(
-          <>
-            <div
-              className="fixed inset-0 z-[9998] bg-background md:hidden"
-              onClick={() => setOpen(false)}
-              aria-hidden="true"
-            />
-            <div
-              className="fixed left-0 right-auto top-0 bottom-0 z-[9999] h-screen w-[40vw] max-w-[40vw] bg-background md:hidden"
-              role="dialog"
-              aria-modal="true"
-              aria-label="منوی اصلی"
-            >
-              <div className="flex h-16 items-center justify-end border-b border-border px-5">
-                <button
-                  className="relative z-10 text-foreground"
-                  aria-label="بستن منو"
-                  onClick={() => setOpen(false)}
-                >
-                  <X size={20} />
-                </button>
-              </div>
-              <nav className="flex flex-col px-5 py-6">
-                {nav.map((item) => (
-                  <Link
-                    key={item.to}
-                    to={item.to}
-                    onClick={() => setOpen(false)}
-                    className="py-3 text-base text-muted-foreground transition-colors hover:text-foreground"
-                    activeProps={{ className: "py-3 text-base text-gold" }}
-                    activeOptions={{ exact: item.to === "/" }}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-                <button
-                  onClick={() => {
-                    setOpen(false);
-                    showDemoNotice("مشاوره رایگان");
-                  }}
-                  className="mt-4 rounded-sm border border-gold/50 px-4 py-2.5 text-center text-sm text-gold transition-colors hover:bg-gold hover:text-primary-foreground"
-                >
-                  مشاوره رایگان
-                </button>
-              </nav>
+          <div
+            className="fixed left-0 right-auto top-0 bottom-0 z-[9999] h-screen w-[40vw] max-w-[40vw] bg-background md:hidden"
+            role="dialog"
+            aria-modal="true"
+            aria-label="منوی اصلی"
+          >
+            <div className="flex h-16 items-center justify-end border-b border-border px-5">
+              <button
+                className="relative z-10 text-foreground"
+                aria-label="بستن منو"
+                onClick={() => setOpen(false)}
+              >
+                <X size={20} />
+              </button>
             </div>
-          </>,
+            <nav className="flex flex-col px-5 py-6">
+              {nav.map((item) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  onClick={() => setOpen(false)}
+                  className="py-3 text-base text-muted-foreground transition-colors hover:text-foreground"
+                  activeProps={{ className: "py-3 text-base text-gold" }}
+                  activeOptions={{ exact: item.to === "/" }}
+                >
+                  {item.label}
+                </Link>
+              ))}
+              <button
+                onClick={() => {
+                  setOpen(false);
+                  showDemoNotice("مشاوره رایگان");
+                }}
+                className="mt-4 rounded-sm border border-gold/50 px-4 py-2.5 text-center text-sm text-gold transition-colors hover:bg-gold hover:text-primary-foreground"
+              >
+                مشاوره رایگان
+              </button>
+            </nav>
+          </div>,
           document.body,
         )}
     </header>
