@@ -55,23 +55,55 @@ export function SiteHeader() {
       </div>
 
       {open && (
-        <div className="border-t border-border md:hidden">
-          <div className="mx-auto flex max-w-6xl flex-col px-5 py-3">
-            {nav.map((item) => (
-              <Link
-                key={item.to}
-                to={item.to}
-                onClick={() => setOpen(false)}
-                className="py-2.5 text-sm text-muted-foreground"
-                activeProps={{ className: "py-2.5 text-sm text-gold" }}
-                activeOptions={{ exact: item.to === "/" }}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        </div>
+        <div
+          className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden"
+          onClick={() => setOpen(false)}
+          aria-hidden="true"
+        />
       )}
+
+      <div
+        className={[
+          "fixed inset-y-0 left-0 z-50 w-72 bg-background shadow-2xl transition-transform duration-300 ease-out md:hidden",
+          open ? "translate-x-0" : "-translate-x-full",
+        ].join(" ")}
+      >
+        <div className="flex h-16 items-center justify-between border-b border-border px-5">
+          <span className="text-lg font-bold tracking-[0.22em] text-foreground">
+            MOLKE<span className="text-gold">BASTAN</span>
+          </span>
+          <button
+            className="text-foreground"
+            aria-label="بستن منو"
+            onClick={() => setOpen(false)}
+          >
+            <X size={20} />
+          </button>
+        </div>
+        <nav className="flex flex-col px-5 py-6">
+          {nav.map((item) => (
+            <Link
+              key={item.to}
+              to={item.to}
+              onClick={() => setOpen(false)}
+              className="py-3 text-base text-muted-foreground transition-colors hover:text-foreground"
+              activeProps={{ className: "py-3 text-base text-gold" }}
+              activeOptions={{ exact: item.to === "/" }}
+            >
+              {item.label}
+            </Link>
+          ))}
+          <button
+            onClick={() => {
+              setOpen(false);
+              showDemoNotice("مشاوره رایگان");
+            }}
+            className="mt-4 rounded-sm border border-gold/50 px-4 py-2.5 text-center text-sm text-gold transition-colors hover:bg-gold hover:text-primary-foreground"
+          >
+            مشاوره رایگان
+          </button>
+        </nav>
+      </div>
     </header>
   );
 }
